@@ -17,3 +17,9 @@ INFO702 TP 1
     FAIT (inversion des canal vert et bleu)
 
 7 - On rajoute les accesseurs et un itérateur générique
+    FAIT
+
+8 - Créer les nouveaux accesseurs à la composante rouge et bleue
+    FAIT
+
+9 - Itérateurs génériques non constants

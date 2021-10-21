@@ -5,3 +5,5 @@ images
 invert-red-blue
 testColorImage2D
 testGrayLevelImage2D
+save-channels
+save-green-channel

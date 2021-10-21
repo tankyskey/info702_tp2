@@ -4,7 +4,9 @@ CXX=g++ -Wall -std=c++11 -g -c
 EXEC_SRC=\
 	testGrayLevelImage2D.cpp \
 	testColorImage2D.cpp \
-	invert-red-blue.cpp
+	invert-red-blue.cpp \
+	save-green-channel.cpp \
+	save-channels.cpp
 
 MODULE_SRC=\
 	image2D.cpp
@@ -23,6 +25,12 @@ testColorImage2D: testColorImage2D.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 invert-red-blue: invert-red-blue.o ${MODULE_OBJ}
+	${LD} ${MODULE_OBJ} $< -o $@
+
+save-green-channel: save-green-channel.o ${MODULE_OBJ}
+	${LD} ${MODULE_OBJ} $< -o $@
+
+save-channels: save-channels.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 .cpp.o: %.cpp %.hpp
