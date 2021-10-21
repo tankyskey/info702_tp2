@@ -68,7 +68,8 @@ TODO: Convertit la couleur donnée avec le modèle HSV (TSV en
 français) en une couleur RGB.
 */
     void setHSV( int h, float s, float v )
-    {}
+    {
+    }
 };
 
 #endif //_COLOR_HPP_

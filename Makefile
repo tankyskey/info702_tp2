@@ -6,7 +6,8 @@ EXEC_SRC=\
 	testColorImage2D.cpp \
 	invert-red-blue.cpp \
 	save-green-channel.cpp \
-	save-channels.cpp
+	save-channels.cpp \
+	old-screen.cpp
 
 MODULE_SRC=\
 	image2D.cpp
@@ -31,6 +32,9 @@ save-green-channel: save-green-channel.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 save-channels: save-channels.o ${MODULE_OBJ}
+	${LD} ${MODULE_OBJ} $< -o $@
+
+old-screen: old-screen.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 .cpp.o: %.cpp %.hpp

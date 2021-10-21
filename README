@@ -8,7 +8,7 @@ INFO702 TP 1
     FAIT
 
 4 - Premier itérateur sur images quelconques.
-    TODO
+    FAIT
 
 5 - Un importeur / exporteur PBM générique
     FAIT
@@ -23,3 +23,7 @@ INFO702 TP 1
     FAIT
 
 9 - Itérateurs génériques non constants
+    TODO 1 - les couleurs tendent vers le vert
+         2 - le compilateur ignore les itérateurs constants et préfère les itérateurs non constants (save-green-channel.cpp ligne 40)
+
+10 - Espace TSV (HSV) et histogramme d'une image couleur

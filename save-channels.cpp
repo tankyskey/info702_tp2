@@ -41,9 +41,7 @@ int main( int argc, char** argv )
     }
     ColorImage2D img;
     std::ifstream input( argv[1] ); // récupère le 1er argument.
-    bool ok = ColorImage2DReader::read( img, input );
-    if ( !ok )
-    {
+    if ( !ColorImage2DReader::read( img, input ) ) {
         std::cerr << "Error reading input file." << std::endl;
         return 1;
     }
