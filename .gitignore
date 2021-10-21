@@ -1,0 +1,7 @@
+*.tar.gz
+*.o
+images
+.ccls-cache/
+invert-red-blue
+testColorImage2D
+testGrayLevelImage2D

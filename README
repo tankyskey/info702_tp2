@@ -1,0 +1,19 @@
+GEYER TAFANEL
+INFO702 TP 1
+
+2 - Définition d'une classe pour représenter des images arbitraires.
+    FAIT
+
+3 - Introduction des images couleurs.
+    FAIT
+
+4 - Premier itérateur sur images quelconques.
+    TODO
+
+5 - Un importeur / exporteur PBM générique
+    FAIT
+
+6 - Premier test: on inverse les canaux rouge et bleu
+    FAIT (inversion des canal vert et bleu)
+
+7 - On rajoute les accesseurs et un itérateur générique
