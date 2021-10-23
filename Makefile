@@ -7,7 +7,8 @@ EXEC_SRC=\
 	invert-red-blue.cpp \
 	save-green-channel.cpp \
 	save-channels.cpp \
-	old-screen.cpp
+	old-screen.cpp \
+	histogramme.cpp
 
 MODULE_SRC=\
 	image2D.cpp
@@ -35,6 +36,9 @@ save-channels: save-channels.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 old-screen: old-screen.o ${MODULE_OBJ}
+	${LD} ${MODULE_OBJ} $< -o $@
+
+histogramme: histogramme.o ${MODULE_OBJ}
 	${LD} ${MODULE_OBJ} $< -o $@
 
 .cpp.o: %.cpp %.hpp

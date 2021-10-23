@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+typedef unsigned char Byte;
+
 /**
   Représente une couleur avec un codage RGB. Ce codage utilise 3
   octets, le premier octet code l'intensité du rouge, le deuxième
@@ -69,6 +71,40 @@ français) en une couleur RGB.
 */
     void setHSV( int h, float s, float v )
     {
+        Byte t = h/60 % 6,
+             f = h/60 - t;
+        Byte l = v * (1-s),
+             m = v * (1-f*s),
+             n = v * (1 - (1-f) * f);
+
+        switch(t) {
+            case 0:
+                red = v; green = n; blue = l;
+                break;
+
+            case 1:
+                red = m; green = v; blue = l;
+                break;
+
+            case 2:
+                red = l; green = v; blue = n;
+                break;
+
+            case 3:
+                red = l; green = m; blue = v;
+                break;
+
+            case 4:
+                red = n; green = l; blue = v;
+                break;
+
+            case 5:
+                red = v; green = l; blue = m;
+                break;
+
+            default:
+                break;
+        }
     }
 };
 
