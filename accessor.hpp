@@ -156,6 +156,7 @@ struct ColorValueAccessor {
         arg.getHSV( t, s, v );
         return t;
     }
+
   };
  
   typedef ColorValueReference Reference;

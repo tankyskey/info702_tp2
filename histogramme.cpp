@@ -22,6 +22,7 @@ int main( int argc, char** argv )
 {
     Histogramme H;
     ColorImage2D img;
+
     std::ifstream input( argv[1] );
     if ( !ColorImage2DReader::read( img, input ) ) {
         std::cerr << "Error reading input file." << std::endl;
@@ -29,7 +30,7 @@ int main( int argc, char** argv )
     }
     input.close();
 
-    H.init( img.begin(), img.end() );
+    H.init( img.begin< ColorValueAccessor >(), img.end< ColorValueAccessor >() );
     GrayLevelImage2D img2 = H.exportImg();
 
     std::ofstream output( argv[2] );

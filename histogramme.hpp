@@ -16,25 +16,36 @@ class Histogramme {
     public:
         template <typename InputIterator>
         void init( InputIterator it, InputIterator itE ) {
-            for( ; it != itE; it++ ) {
-                int h;
-                float s, v;
-                it->getHSV(h, s, v);
-                histo[h]++;
+            int nbPixels = itE - it;
+            double max = 0, coef;
 
-                for( int i=h; i<256; i++)
-                    histoCumul[i]++;
+            for(; it != itE; it++)
+                max = ++histo[(int)*it] > max ? histo[(int)*it] : max ;
+            coef = 256 * nbPixels / max;
+
+            for(int i=0; i<256; i++) {
+
+                for(int j=0; j<i; j++)
+                    histoCumul[i] += histo[j];
+
+                histo[i] *= coef / (double)nbPixels;
+                histoCumul[i] *= max /(double)nbPixels;
+
             }
         }
 
         GrayLevelImage2D exportImg() {
-            GrayLevelImage2D img(256, 256);
+            GrayLevelImage2D img(512, 256, 255);
+
             for(int x=0; x<256; x++) {
-                for(int y=256; y>256-histo[x]; y--) {
-                    img.at(x, y) = 255;
+                for(int y=256-histo[x]; y<256; y++) {
+                    img.at(x, y) = 0;
+                }
+
+                for(int y=256-histoCumul[x]; y<256; y++) {
+                    img.at(x+256, y) = 0;
                 }
             }
-            std::cout<<"hi"<<std::endl;
             return img;
         }
 };
